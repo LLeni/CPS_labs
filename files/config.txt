@@ -1,0 +1,4 @@
+goalCount=45dgd
+measurementCount=30
+parameterCount=10
+parameterForEachGoalCount=3
