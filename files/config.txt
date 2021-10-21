@@ -2,3 +2,6 @@ goalCount=20
 measurementCount=30
 parameterCount=10
 parameterForEachGoalCount=3
+developerCount=4
+commandCount=20
+hourCount=8
