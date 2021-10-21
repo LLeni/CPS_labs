@@ -7,16 +7,25 @@ import java.util.Scanner;
 public class Config {
 
     // число одновременно сопровождаемых целей
-    public static Integer goalCount = 20;
+    public static int goalCount = 20;
 
     // количество измерений каждого отслеживаемого параметра, которое необходимо для поражения каждой цели
-    public static Integer measurementCount = 30;
+    public static int measurementCount = 30;
 
     // количество отслеживаемых параметров
-    public static Integer parameterCount = 10;
+    public static int parameterCount = 10;
 
     // количество рассчитываемых параметров по каждой цели, передаваемых системе уничтожения
-    public static Integer parameterForEachGoalCount = 3;
+    public static int parameterForEachGoalCount = 3;
+
+    // количество программистов
+    public static int developerCount = 4;
+
+    // количество отлаженных команд
+    public static int commandCount = 20;
+
+    // количество рабочих часов
+    public static int hourCount = 8;
 
     public static void readFileConfig(String parameterFileName) throws FileNotFoundException {
         FileReader file = new FileReader(parameterFileName);
@@ -40,6 +49,15 @@ public class Config {
                     break;
                 case "parameterForEachGoalCount":
                     parameterForEachGoalCount = Integer.parseInt(line[1]);
+                    break;
+                case "developerCount":
+                    developerCount = Integer.parseInt(line[1]);
+                    break;
+                case "commandCount":
+                    commandCount = Integer.parseInt(line[1]);
+                    break;
+                case "hourCount":
+                    hourCount = Integer.parseInt(line[1]);
                     break;
             }
         }
