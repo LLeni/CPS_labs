@@ -15,4 +15,17 @@ public class Evaluator {
         this.errorsIntervals = errorsIntervals;
         countIntervals = errorsIntervals.size();
     }
+
+    // Позволяет отобразить все найденные значения
+    public void showResults(){
+        if(B == Double.MIN_VALUE){
+            System.out.println("Ошибка! Еще не производился расчет");
+        } else {
+            System.out.println("\nРезультаты");
+            System.out.printf("%-40s%25f ошибок","Общее число ошибок ",B);
+            System.out.printf("%n%-40s%25f", "Коэффициент пропорциональности", K);
+            System.out.printf("%n%-40s%25f д.", "Среднее время до появление ошибки ", X);
+            System.out.printf("%n%-40s%25f д.", "Время до окончания тестирования ", T);
+        }
+    }
 }
