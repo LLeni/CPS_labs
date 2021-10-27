@@ -29,7 +29,30 @@ public class Evaluator {
         }
     }
 
-    //Расчитывает различные промежуточные суммы, которые понадобятся для
+    //Расчитывает общее число ошибок
+    public void calculateB(){
+        defineMinMaxB();
+
+        double currentB = 0;
+        while((maxB - minB) >= 0.001){
+            currentB = (minB + maxB)/ 2;
+            if(calculateVerisimilitude(currentB) < 0){
+                maxB = currentB;
+            } else {
+                minB = currentB;
+            }
+        }
+
+        B = currentB;
+    }
+
+    //Определяет минимальное и максимальное значения B
+    private void defineMinMaxB(){
+        minB = errorsIntervals.size();
+        maxB = 100;
+
+
+        //Расчитывает различные промежуточные суммы, которые понадобятся для
     //оценки максимального правдоподобия величины B
     private void calculateSums(){
         for (int i = 0; i < countIntervals; i++) {
