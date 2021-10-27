@@ -28,4 +28,13 @@ public class Evaluator {
             System.out.printf("%n%-40s%25f д.", "Время до окончания тестирования ", T);
         }
     }
+
+    //Расчитывает различные промежуточные суммы, которые понадобятся для
+    //оценки максимального правдоподобия величины B
+    private void calculateSums(){
+        for (int i = 0; i < countIntervals; i++) {
+            sum += errorsIntervals.get(i);
+            sumConsiderIndexes += errorsIntervals.get(i) * (i+1);
+        }
+    }
 }
