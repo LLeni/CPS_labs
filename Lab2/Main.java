@@ -20,4 +20,13 @@ public class Main {
         }
         return errorsIntervals;
     }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> errorsIntervals = readErrorsIntervals("intervals.txt");
+        System.out.println("Интервалы между ошибками: " + Arrays.toString(errorsIntervals.toArray()));
+
+        Evaluator evaluator = new Evaluator(errorsIntervals);
+        evaluator.calculateAll();
+        evaluator.showResults();
+    }
 }

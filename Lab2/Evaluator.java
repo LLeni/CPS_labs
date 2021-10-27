@@ -74,4 +74,13 @@ public class Evaluator {
             T = result / K;
         }
     }
+
+
+    //Позволяет сразу же посчитать все значения
+    public void calculateAll(){
+        calculateB();
+        calculateK();
+        calculateX();
+        calculateT();
+    }
 }
