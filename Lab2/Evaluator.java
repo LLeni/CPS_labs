@@ -60,4 +60,27 @@ public class Evaluator {
             sumConsiderIndexes += errorsIntervals.get(i) * (i+1);
         }
     }
-}
+
+    //Расчитывает коэффициент пропорциональности
+        public void calculateK(){
+            if(B == Double.MIN_VALUE){
+                System.out.println("Еще не производился расчет B");
+            } else {
+                double result = 0;
+                for (int i = 0; i < countIntervals; i++) {
+                    result += (B - (i + 1) + 1) * errorsIntervals.get(i);
+                }
+                K = countIntervals / result;
+            }
+        }
+
+
+        //Расчитывает среднее время Xn+1 до появления (n+1) ошибки
+        public void calculateX(){
+            if(K == Double.MIN_VALUE){
+                System.out.println("Еще не производился расчет K");
+            } else {
+                X = 1/(K * (B - countIntervals));
+            }
+        }
+    }
