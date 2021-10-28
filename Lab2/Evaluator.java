@@ -36,20 +36,21 @@ public class Evaluator {
         double currentB = 0;
         while((maxB - minB) >= 0.001){
             currentB = (minB + maxB)/ 2;
-            if(calculateVerisimilitude(currentB) < 0){
-                maxB = currentB;
-            } else {
-                minB = currentB;
-            }
+//            if(calculateVerisimilitude(currentB) < 0){
+//                maxB = currentB;
+//            } else {
+//                minB = currentB;
+//            }
         }
 
         B = currentB;
     }
 
     //Определяет минимальное и максимальное значения B
-    private void defineMinMaxB(){
+    private void defineMinMaxB() {
         minB = errorsIntervals.size();
         maxB = 100;
+    }
 
 
         //Расчитывает различные промежуточные суммы, которые понадобятся для
