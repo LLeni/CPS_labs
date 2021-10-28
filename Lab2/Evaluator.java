@@ -47,9 +47,10 @@ public class Evaluator {
     }
 
     //Определяет минимальное и максимальное значения B
-    private void defineMinMaxB(){
+    private void defineMinMaxB() {
         minB = errorsIntervals.size();
         maxB = 100;
+    }
 
 
         //Расчитывает различные промежуточные суммы, которые понадобятся для
@@ -59,5 +60,27 @@ public class Evaluator {
             sum += errorsIntervals.get(i);
             sumConsiderIndexes += errorsIntervals.get(i) * (i+1);
         }
+    }
+
+    //Расчитывает время до окончания тестирования
+    public void calculateT(){
+        if(K == Double.MIN_VALUE){
+            System.out.println("Еще не производился расчет K");
+        } else {
+            double result = 0;
+            for (int i = 1; i <= B - countIntervals; i++) {
+                result += 1 / i;
+            }
+            T = result / K;
+        }
+    }
+
+
+    //Позволяет сразу же посчитать все значения
+    public void calculateAll(){
+        calculateB();
+        calculateK();
+        calculateX();
+        calculateT();
     }
 }
